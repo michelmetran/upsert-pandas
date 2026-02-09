@@ -1,12 +1,13 @@
 # Basic
 site_name: Upsert Pandas
+site_description: "Upsert function in Pandas"
 site_author: Michel Metran
-site_url: https://pyMNI.readthedocs.io/
+site_url: https://upsert-pandas.readthedocs.io/
 copyright: |
-  &copy; 2025 <a href="https://github.com/michelmetran"  target="_blank" rel="noopener">Michel Metran</a>
+  &copy; 2026 <a href="https://github.com/michelmetran"  target="_blank" rel="noopener">Michel Metran</a>
 
 # GitHub Repo Link
-repo_url: https://github.com/michelmetran/pyMNI
+repo_url: https://github.com/michelmetran/upsert-pandas
 
 docs_dir: "docs" # Default docs
 site_dir: "site" # Default site
@@ -15,12 +16,9 @@ site_dir: "site" # Default site
 # Opcional
 nav:
   - Home: index.md
-  - Como Instalar?: pages/como-instalar.md
-  - Como Usar?:
-      - Número do Processo: scripts/numero_processos.ipynb
-      - Chamada via WebService: scripts/consulta.ipynb
-
-  - Referências: pages/referencias.md
+  - Install: pages/install.md
+  - Function: pages/function.md
+  - using: pages/using.md
 
 theme:
   # Breadcrumbs
@@ -34,13 +32,12 @@ theme:
     - navigation.footer
     - search.suggest
     - search.highlight
-
     - toc.follow
     #- toc.integrate
     - content.code.annotation
     - content.code.copy
 
-  language: pt-BR
+  language: en
 
   icon:
     repo: fontawesome/brands/github
@@ -74,7 +71,6 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 
-
 # https://facelessuser.github.io/pymdown-extensions/
 markdown_extensions:
   - admonition
@@ -100,7 +96,33 @@ markdown_extensions:
 plugins:
   - social
   - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+            docstring_section_style: table
+            annotations_path: brief
+            #docstring_options:
+            #ignore_init_summary: false
+            #trim_doctest_flags: true
+
   #- projects
+  - i18n:
+      docs_structure: suffix
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+        - locale: pt
+          name: Português (BR)
+          #site_name: "Documentation du plugin MkDocs static i18n (fr)"
+          default: false
+          build: true
+
   - mkdocs-jupyter:
       ignore_h1_titles: True
       include_source: True
@@ -108,12 +130,20 @@ plugins:
       show_input: True # Default True
       no_input: False # Default False
       #ignore: [ '1*.ipynb' ]
-      include: [ "*.ipynb" ] # Default: ["*.py", "*.ipynb"]
+      include: ["*.ipynb"] # Default: ["*.py", "*.ipynb"]
       remove_tag_config:
         remove_cell_tags:
           - hide_code
 
 extra:
+  # alternate:
+  #   - name: English
+  #     link: /en/
+  #     lang: en
+  #   - name: Portugues Brasil
+  #     link: /pt-BR/
+  #     lang: pt-BR
+
   analytics:
     provider: google
     property: GT-PZVTRDZX

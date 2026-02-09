@@ -15,15 +15,34 @@ def upsert(
     only_non_null: bool = True,
     include_new_columns: bool = False,
 ) -> pd.DataFrame:
-    """
-    Upsert `df_new` into `df_existing` using key column(s) `on`.
+    """Upsert ``df_new`` into ``df_existing`` using key column(s) ``on``.
 
-    - Atualiza apenas colunas que existem em ambos os dataframes (exceto as chaves).
-    - `only_non_null=True` (padrão) faz com que valores NaN em df_new NÃO sobrescrevam valores em df_existing.
-    - `include_new_columns=False` (padrão) para novas linhas adicionadas, mantém apenas colunas de df_existing;
-      se True, adiciona também colunas novas vindas de df_new.
+    Only columns present in both DataFrames (excluding the key columns) are
+    updated. When ``only_non_null`` is True (default), NaN values in
+    ``df_new`` do NOT overwrite values in ``df_existing``. When
+    ``include_new_columns`` is False (default), newly added rows keep only the
+    columns from ``df_existing``; if True, new columns from ``df_new`` are
+    also added.
 
-    Retorna um novo DataFrame resultado do upsert (não modifica os inputs).
+    Parameters
+    ----------
+    df_existing : pandas.DataFrame
+        Target DataFrame to be updated.
+    df_new : pandas.DataFrame
+        Source DataFrame containing new or updated rows.
+    on : str or list of str
+        Column name or list of column names to use as key(s) for matching.
+    only_non_null : bool, optional
+        If True, only non-null values from ``df_new`` overwrite existing
+        values. Default is ``True``.
+    include_new_columns : bool, optional
+        If True, new columns from ``df_new`` will be added for new rows.
+        Default is ``False``.
+
+    Returns
+    -------
+    pandas.DataFrame
+        New DataFrame resulting from the upsert (the inputs are not modified).
     """
     if isinstance(on, str):
         on = [on]
@@ -74,10 +93,16 @@ def upsert(
         if not include_new_columns:
             # alinhar colunas às do existing
             cols = existing_idx.columns
+
             # reindex as colunas (mantém as chaves)
             new_rows = new_rows.reindex(columns=cols, fill_value=np.nan)
-        # concat mantendo a ordem: existing primeiro, depois novas
-        existing_idx = pd.concat([existing_idx, new_rows], axis=0, sort=False)
+
+        # Concat mantendo a ordem: existing primeiro, depois novas
+        existing_idx = pd.concat(
+            [existing_idx, new_rows],
+            axis=0,
+            sort=False,
+        )
 
     # Reset index e retornar
     result = existing_idx.reset_index(drop=True)

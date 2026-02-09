@@ -1,8 +1,8 @@
-# Upsert Pandas
+# _Upsert_ Pandas
 
 [![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/upsert-pandas)
 [![PyPI - Version](https://img.shields.io/pypi/v/upsert-pandas?logo=pypi&label=PyPI&color=blue)](https://pypi.org/project/upsert-pandas/)<br>
-[![Read the Docs](https://img.shields.io/readthedocs/pyMNI?logo=ReadTheDocs&label=Read%20The%20Docs)](https://pyMNI.readthedocs.io/)
+[![Read the Docs](https://img.shields.io/readthedocs/upsert-pandas?logo=ReadTheDocs&label=Read%20The%20Docs)](https://upsert-pandas.readthedocs.io/pt-br/latest/)
 [![Publish Python to PyPI](https://github.com/michelmetran/upsert-pandas/actions/workflows/publish-to-pypi-uv.yml/badge.svg)](https://github.com/michelmetran/upsert-pandas/actions/workflows/publish-to-pypi-uv.yml)
 
 A função _Upsert_ é uma operação fundamental em bancos de dados e sistemas de gerenciamento de dados que combina as operações de _Update_ (Atualizar) e _Insert_ (Inserir) em uma única etapa atômica. O nome _Upsert_ é, literalmente, uma junção dos dois verbos.
