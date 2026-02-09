@@ -11,7 +11,7 @@ on: push
 
 jobs:
   build-n-publish:
-    name: Build and Publish Python Poetry🐍 distributions 📦 to PyPI
+    name: Build and Publish Python Poetry 🐍 distributions 📦 to PyPI
 
     runs-on: ubuntu-latest
 
