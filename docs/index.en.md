@@ -2,7 +2,7 @@
 
 [![Repo](https://img.shields.io/badge/GitHub-repo-blue?logo=github&logoColor=f5f5f5)](https://github.com/michelmetran/upsert-pandas)
 [![PyPI - Version](https://img.shields.io/pypi/v/upsert-pandas?logo=pypi&label=PyPI&color=blue)](https://pypi.org/project/upsert-pandas/)<br>
-[![Read the Docs](https://img.shields.io/readthedocs/upsert-pandas?logo=ReadTheDocs&label=Read%20The%20Docs)](https://upsert-pandas.readthedocs.io/pt-br/latest/)
+[![Read the Docs](https://img.shields.io/readthedocs/upsert-pandas?logo=ReadTheDocs&label=Read%20The%20Docs)](https://upsert-pandas.readthedocs.io/)
 [![Publish Python to PyPI](https://github.com/michelmetran/upsert-pandas/actions/workflows/publish-to-pypi-uv.yml/badge.svg)](https://github.com/michelmetran/upsert-pandas/actions/workflows/publish-to-pypi-uv.yml)
 
 The Upsert function is a fundamental operation in databases and data management systems that combines the Update and Insert operations into a single atomic step. The name Upsert is, literally, a join of the two verbs.
