@@ -27,8 +27,8 @@ theme:
     - navigation.top
     #- navigation.tabs
     - navigation.sections
-    - navigation.instant
-    - navigation.instant.prefetch
+    #- navigation.instant
+    #- navigation.instant.prefetch
     - navigation.footer
     - search.suggest
     - search.highlight
