@@ -1,6 +1,6 @@
 [project]
 name = "upsert-pandas"
-version = "0.0.3"
+version = "0.0.4"
 description = "Upsert function in Pandas"
 readme = "README.md"
 requires-python = ">=3.11"

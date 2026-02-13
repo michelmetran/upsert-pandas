@@ -18,7 +18,7 @@ nav:
   - Home: index.md
   - Install: pages/install.md
   - Function: pages/function.md
-  - using: pages/using.md
+  - Using: pages/using.md
 
 theme:
   # Breadcrumbs
